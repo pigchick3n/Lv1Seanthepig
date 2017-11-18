@@ -9,6 +9,6 @@ public static void main(String[] args) {
 	Pig zombie = new Pig ("ressurected fruit", 1, 2);
 	zombie.speak();
 	zombie.toys();
-	zombies.status();
+	zombie.status();
 }
 }
