@@ -15,6 +15,7 @@
 	public class PhotoQuiz {
 
 		public static void main(String[] args) throws Exception {
+			int score = 0;
 			JFrame quizWindow = new JFrame();
 			quizWindow.setVisible(true);
 			quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,15 +34,17 @@
 			// 7. print "CORRECT" if the user gave the right answer
 			if(a.equalsIgnoreCase("Jace, The Mind Sculpter")) {
 				JOptionPane.showMessageDialog(null, "Correct");
+				score+=10;
 			}else {
 				JOptionPane.showMessageDialog(null, "Incorrect");
+				score-=10;
 			}
 			// 8. print "INCORRECT" if the answer is wrong
 
 			// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
 			quizWindow.remove(x);
 			// 10. find another image and create it (might take more than one line of code)
-			String n = "http://www.artofmtg.com/wp-content/uploads/2017/02/Gideon-Amonkhet-2.jpg";
+			String n = "http://media.wizards.com/images/magic/daily/wallpapers/Black_Lotus_MTGOweek_iPad_Wallpaper_2.jpg";
 			Component y;
 			y = createImage(n);
 			// 11. add the second image to the quiz window
@@ -51,12 +54,14 @@
 			// 13. ask another question
 			String b =JOptionPane.showInputDialog("What Magic the Gathering card is this?");	
 			// 14+ check answer, say if correct or incorrect, etc.
-			if(a.equalsIgnoreCase("Gideon of the Trials")) {
+			if(a.equalsIgnoreCase("Black Lotus")) {
 				JOptionPane.showMessageDialog(null, "Correct");
+				score+=10;
 			}else {
 				JOptionPane.showMessageDialog(null, "Incorrect");
+				score-=10;
 			}
-			
+			JOptionPane.showMessageDialog(null, "Your score is " + score);;
 		}
 
 		private static Component createImage(String h) throws MalformedURLException {
