@@ -31,7 +31,7 @@ public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
 	private JButton thirdButton, fourthButton;
-
+	private JButton fifthButton;
 	private JPanel quizPanel;
 	int score = 0;
 	JLabel scoreBox = new JLabel("0");
@@ -57,20 +57,26 @@ public class Jeopardy implements ActionListener {
 		frame.add(quizPanel);
 
 		// 6. Use the createButton method to set the value of firstButton
-		firstButton = createButton("100");
+		firstButton = createButton("200");
 		// 7. Add the firstButton to the quizPanel
 		quizPanel.add(firstButton);
 		// 8. Write the code inside the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
-		createButton("100");
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-		secondButton = createButton("200");
+		secondButton = createButton("400");
+		
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
+		thirdButton = createButton("600");
+		quizPanel.add(thirdButton);
+		fourthButton = createButton("800");
+		quizPanel.add(fourthButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
 		secondButton.addActionListener(this);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 
 		frame.pack();
@@ -110,11 +116,15 @@ public class Jeopardy implements ActionListener {
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
 		if (buttonPressed == firstButton) {
-			askQuestion("What generation do you get chimchar as a starter?(list number)", "What is 4?", 100);
+			askQuestion("What generation do you get chimchar as a starter?(list number)", "What is 4", 200);
 			firstButton.setText(null);
 		}else if(buttonPressed == secondButton){
-			askQuestion("What is the fully evolved form of chikorita?", "What is Meganium?", 200);
+			askQuestion("What is the fully evolved form of chikorita?", "What is Meganium", 400);
 			secondButton.setText(null);
+		}else if(buttonPressed == thirdButton) {
+			askQuestion("What pokemon is Red's ace?", "What is Pikachu", 600);
+		}else if(buttonPressed == fourthButton){
+			askQuestion("What does swablu evolve into", "What is Altaria",800);
 		}
 		// Call the askQuestion() method
 
