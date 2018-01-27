@@ -123,8 +123,10 @@ public class Jeopardy implements ActionListener {
 			secondButton.setText(null);
 		}else if(buttonPressed == thirdButton) {
 			askQuestion("What pokemon is Red's ace?", "What is Pikachu", 600);
+			thirdButton.setText(null);
 		}else if(buttonPressed == fourthButton){
 			askQuestion("What does swablu evolve into", "What is Altaria",800);
+			fourthButton.setText(null);
 		}
 		// Call the askQuestion() method
 
