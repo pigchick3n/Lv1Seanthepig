@@ -3,6 +3,7 @@ import java.awt.Frame;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -10,6 +11,8 @@ import javax.swing.JLabel;
 
 public class AnimalJumping {
 	JFrame frame = new JFrame("Directed By Michael Bay");
+	JLabel label = new JLabel();
+	String urlOfAnimalSuckingAtJumping = "http://i.imgur.com/Jdt1rRf.gif";
 	 public static void main(String[] args) throws MalformedURLException {
 		 AnimalJumping aj = new AnimalJumping();
 		 aj.run();
@@ -21,13 +24,18 @@ public class AnimalJumping {
 	         * 		- have a title such as "Gerbil Fail"
 	         */
 
-		 	String urlOfAnimalSuckingAtJumping = "http://i.imgur.com/Jdt1rRf.gif";
-	       
+		 	
+		 	
 	    }
-	 void run(){
+	 void run() throws MalformedURLException{
+		 label=createImage(urlOfAnimalSuckingAtJumping);
+		 frame.add(label);
 		 frame.setVisible(true);
+		 frame.setSize(750, 750);
+		 frame.setLocationRelativeTo(null);
 		 
-		 frame.add(comp)
+
+		 
 	 }
 	 static JLabel createImage(String imageURL) throws MalformedURLException {
 		 	URL url = new URL(imageURL);
