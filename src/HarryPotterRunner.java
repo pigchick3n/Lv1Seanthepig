@@ -11,7 +11,7 @@ public class HarryPotterRunner {
 		// 4. become visible again
 		d.makeInvisible(false);
 		// 5. cast a “stupefy” spell
-		d.castSpell("stupify");
+		d.castSpell("stupefy");
 
 }
 }
