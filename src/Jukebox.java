@@ -1,6 +1,6 @@
 // Copyright The League of Amazing Programmers, 2015
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -10,8 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.advanced.AdvancedPlayer;
+//import javazoom.jl.decoder.JavaLayerException;
+//import javazoom.jl.player.advanced.AdvancedPlayer;
 
 /* 1. Download the JavaZoom jar from here: http://bit.ly/javazoom
  * 2. Right click your project and add it as an External JAR (Under Java Build Path > Libraries).*/
@@ -51,7 +51,7 @@ class Song {
 
 	private int duration;
 	private String songAddress;
-	private AdvancedPlayer mp3Player;
+	//private AdvancedPlayer mp3Player;
 	private InputStream songStream;
 
 	/**
@@ -103,7 +103,7 @@ class Song {
 
 	private void loadPlayer() {
 		try {
-			this.mp3Player = new AdvancedPlayer(songStream);
+	//		this.mp3Player = new AdvancedPlayer(songStream);
 		} catch (Exception e) {
 		}
 	}
@@ -125,9 +125,11 @@ class Song {
 
 	private InputStream loadStreamFromComputer() {
 		try {
-			return new FileInputStream(songAddress);
-		} catch (FileNotFoundException e) {
+	//		return new FileInputStream(songAddress);
+	//	} catch (FileNotFoundException e) {
 			return this.getClass().getResourceAsStream(songAddress);
-		}
+	//	}
 	}
+}
+}
 }

@@ -46,12 +46,12 @@ public class Spamalot implements ActionListener {
 		JButton buttonPressed = (JButton) e.getSource();
 		if(buttonPressed == good) {
 			String input = textfield.getText();
-			for(int i = 0; i<5; i++) {
+			for(int i = 0; i<100; i++) {
 		sendSpam(input, "Hi", "Hello");
 			}
 		}else if(buttonPressed == bad) {
 			String input = textfield.getText();
-			for(int i = 0; i<10; i++) {
+			for(int i = 0; i<100; i++) {
 			sendSpam(input, "this is bad", "bad stuff");
 		}
 		}
