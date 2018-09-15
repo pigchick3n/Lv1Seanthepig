@@ -71,7 +71,7 @@ class Song {
 	public void play() {
 		loadFile();
 		if (songStream != null) {
-			loadPlayer();
+		//	loadPlayer();
 			startSong();
 		} else
 			System.err.println("Unable to load file: " + songAddress);
@@ -82,26 +82,26 @@ class Song {
 	}
 
 	public void stop() {
-		if (mp3Player != null)
-			mp3Player.close();
+	//	if (mp3Player != null)
+	//		mp3Player.close();
 	}
 
 	private void startSong() {
-		Thread t = new Thread() {
-			public void run() {
-				try {
-					if (duration > 0)
-						mp3Player.play(duration);
-					else
-						mp3Player.play();
-				} catch (Exception e) {
-				}
-			}
-		};
-		t.start();
+		//Thread t = new Thread() {;
+		//	public void run() {
+			//	try {
+					if (duration > 0){
+	//					mp3Player.play(duration);
+	//				else
+	//					mp3Player.play();
+				//} catch (Exception e) {
+				//}
+			//}
+	//	};
+	//	t.start();
 	}
 
-	private void loadPlayer() {
+//	private void loadPlayer() {
 		try {
 	//		this.mp3Player = new AdvancedPlayer(songStream);
 		} catch (Exception e) {
@@ -109,10 +109,10 @@ class Song {
 	}
 
 	private void loadFile() {
-		if (songAddress.contains("http"))
-			this.songStream = loadStreamFromInternet();
-		else
-			this.songStream = loadStreamFromComputer();
+	//	if (songAddress.contains("http"))
+	//		this.songStream = loadStreamFromInternet();
+	//	else
+	//		this.songStream = loadStreamFromComputer();
 	}
 
 	private InputStream loadStreamFromInternet() {
@@ -122,14 +122,16 @@ class Song {
 			return null;
 		}
 	}
+		
+	}
 
-	private InputStream loadStreamFromComputer() {
-		try {
+	//private InputStream loadStreamFromComputer() {
+	//	try {
 	//		return new FileInputStream(songAddress);
 	//	} catch (FileNotFoundException e) {
-			return this.getClass().getResourceAsStream(songAddress);
+	//		return this.getClass().getResourceAsStream(songAddress);
 	//	}
-	}
-}
-}
-}
+//	}
+//}
+
+
